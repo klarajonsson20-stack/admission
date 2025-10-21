@@ -9,6 +9,10 @@ import pandas as pd
 import warnings
 warnings.filterwarnings("ignore")
 
+password_guess = st.text_input("What is the Password?")
+if password_guess != st.secrets["password"]:
+    st.stop()
+
 st.title("Graduate Admission Prediction🌟")
 st.write("This app uses multiple inputs to predict the probability of a student getting admitted to a graduate school.")
 # Display an image of admission
@@ -101,4 +105,6 @@ with tab3:
 with tab4:
     st.write("### Coverage Plot")
     st.image('coverage_plot.png', width=700)
+
+
 
